@@ -2,12 +2,13 @@ const body = document.getElementById("body")
 const base = document.getElementById("base")
 var videoDisplay
 var videos
+var jsonVideo
 
 const logo = document.getElementsByClassName("logo")
 
 function shortNum(n){
-    v=[' N',' Tr',' T']
-    level=-1;
+    v=['','N',' Tr','T','NT','TrT','TT']
+    level=0;
     while (n>999) {
         n=n/1000;
         level++;
@@ -95,9 +96,15 @@ function initVid() {
         await fetch(domain+"/src/html/playvideo.html")
             .then(data => data.text())
             .then(DOM => {
-                body.innerHTML = DOM 
-                initDatavideo(i)
-                initOthervideo(i)               
+                body.style.opacity = 0; 
+                setTimeout(()=>{
+                    body.innerHTML = DOM 
+                    initDatavideo(i)
+                    initOthervideo(i) 
+                },500)
+                setTimeout(()=>{
+                    body.style.opacity = 1;            
+                },800)               
             }).catch(err =>{
         console.log("Lỗi tải trang con")
     })
@@ -109,17 +116,44 @@ logo[0].onclick = async()=>{
     await fetch(domain+"/src/html/home.html")
     .then(data => data.text())
     .then(DOM => {
+        body.style.opacity = 0; 
+        setTimeout(()=>{
+            body.innerHTML = DOM 
+            initVid()                    
+        },500)
+        setTimeout(()=>{
+            body.style.opacity = 1;            
+        },800) 
         body.innerHTML = DOM
-        initVid()
     }).catch(err =>{
         console.log("Lỗi tải trang con")
     })
 }
 
+async function fetchData(x,json){
+    if (x==1) {
+        await fetch(`https://647ca80fc0bae2880ad10a44.mockapi.io/video`, {
+        method: 'GET',
+        headers: {'content-type':'application/json'},
+      })
+        .then(data => data.json())
+        .then(out => {
+    jsonVideo=out                
+    }).catch(err =>{
+        console.log("Lỗi tương tác API"+err)
+    })
+    }
+    if (x==2) {
+        await fetch(`https://647ca80fc0bae2880ad10a44.mockapi.io/video`,{
+            method: 'POST',
+            headers: {'content-type':'application/json'},
+            body: JSON.stringify(json)
+    })
+}}
 
 
 window.addEventListener('load',async ()=>{
-    //await fetch("/src/html/home.html")
+    await fetchData(1)
     await fetch(domain+"/src/html/home.html")
     .then(data => data.text())
     .then(DOM => {
@@ -129,3 +163,157 @@ window.addEventListener('load',async ()=>{
         console.log("Lỗi tải trang con")
     })
 })
+
+//UPLOAD
+const uploadBtn = document.querySelector(".upload")
+
+async function initUploadPage(){
+    const inputdataupdate = body.querySelectorAll(".inputdataupdate")
+    const title = body.querySelector(".title-update")
+    const thumb = body.querySelector("#thumb-update")
+    const vid = body.querySelector("#video-update")
+    var check=[false,false,false,false,false,false,false,false]
+    //TITLE
+    inputdataupdate[0].oninput = ()=>{
+        if (inputdataupdate[0].value.trim()!=""){
+            title.innerText = inputdataupdate[0].value.trim()
+            check[0]=true
+        }else{
+            title.innerText = "Hãy đặt tiêu đề!"
+            check[0]=false
+        }
+    }
+    //THUMB    
+    inputdataupdate[1].oninput = ()=>{
+        thumb.src = inputdataupdate[1].value.trim()  
+        check[1]=false
+        thumb.addEventListener("load",()=>{
+            check[1]=true
+        })          
+    }
+    //Video
+    inputdataupdate[2].oninput = ()=>{
+        vid.src = inputdataupdate[2].value.trim()  
+        check[2]=false
+        vid.addEventListener("loadeddata",()=>{
+            check[2]=true
+        })          
+    }
+    //DETAIL
+    const channel = body.querySelector(".info-channel-update")
+    const channelDetails = channel.querySelectorAll("p")
+    inputdataupdate[3].oninput = ()=>{
+        if (inputdataupdate[3].value.trim()!=""){
+            channelDetails[0].innerText = inputdataupdate[3].value.trim()
+            check[3]=true
+        }else{
+            channelDetails[0].innerText = "Hãy đặt tên kênh!"
+            check[3]=false
+        }
+    }
+    inputdataupdate[4].oninput = ()=>{
+        if (inputdataupdate[4].value.trim()!="" && (parseInt(inputdataupdate[4].value) <100000000000000) &&(parseInt(inputdataupdate[4].value)>0) ){
+            channelDetails[1].innerText = shortNum(parseInt(inputdataupdate[4].value))+" Người đăng ký"
+            check[4]=true
+        }else{
+            channelDetails[1].innerText = "? Người đăng ký"
+            check[4]=false
+        }
+    }
+    inputdataupdate[5].oninput = ()=>{
+        if (inputdataupdate[5].value.trim()!="" && (parseInt(inputdataupdate[5].value) <100000000000000) &&(parseInt(inputdataupdate[5].value)>0) ){
+            check[5]=true
+        }else{
+            check[5]=false
+        }
+    }
+    //Like
+    const likeupdate = body.querySelector("#likeupdate")
+    inputdataupdate[6].oninput = ()=>{
+        if (inputdataupdate[6].value.trim()!="" && (parseInt(inputdataupdate[6].value) <100000000000000) &&(parseInt(inputdataupdate[6].value)>0) ){
+            likeupdate.innerText = shortNum(parseInt(inputdataupdate[6].value))+" | "
+            check[6]=true
+        }else{
+            likeupdate.innerText = " --- | "
+            check[6]=false
+        }
+    }
+    //AVT
+    const avtupdate = body.querySelector("#avt-update")
+    inputdataupdate[7].oninput = ()=>{
+        avtupdate.src = inputdataupdate[7].value.trim()  
+        check[7]=false
+        avtupdate.addEventListener("load",()=>{
+            check[7]=true
+        })          
+    }
+    const noice = body.querySelector("#noice-update") 
+    const cancelBtn = body.querySelector("#cancel-update") 
+    const saveBtn = body.querySelector("#save-update") 
+    saveBtn.onclick = async()=>{
+        noice.style.color="red"
+        if (!check[0]) {
+            noice.innerText = "Bạn chưa nhập tên video"
+        }else if (!check[1]) {
+            noice.innerText = "Link Thumbnail có vấn đề, hãy thử lại!"
+        }else if (!check[2]) {
+            noice.innerText = "Link video có vấn đề, hãy thử lại!"
+        }else if (!check[3]) {
+            noice.innerText = "Bạn chưa nhập tên kênh!"
+        }else if (!check[4]) {
+            noice.innerText = "Lượt đăng ký có vấn đề, hãy thử lại!"
+        }else if (!check[5]) {
+            noice.innerText = "Lượt xem có vấn đề, hãy thử lại!"
+        }else if (!check[6]) {
+            noice.innerText = "Lượt thích có vấn đề, hãy thử lại!"
+        }else if (!check[7]) {
+            noice.innerText = "Link avatar có vấn đề, hãy thử lại!"
+        }else {
+            console.log("OKKKK")
+            noice.style.color="green"
+            noice.innerText = "Thành công, đang lưu video lại!"
+            const jsonUp={
+                "title":inputdataupdate[0].value.trim(),
+                "owner":inputdataupdate[3].value.trim(),
+                "view":parseInt(inputdataupdate[5].value),
+                "sub":parseInt(inputdataupdate[4].value),
+                "avt":inputdataupdate[7].value.trim(),
+                "thumb":inputdataupdate[1].value.trim(),
+                "video":inputdataupdate[2].value.trim(),
+                "des":inputdataupdate[8].value.trim(),
+            }
+            await fetchData(2,jsonUp)
+            noice.innerText = "Tải lên thành công, đang về trang chủ!"
+            setTimeout(()=>{
+                location.reload()
+            },1000)
+            
+        }
+    }
+    cancelBtn.onclick = ()=>{
+        location.reload()
+    }
+    
+
+}
+
+
+uploadBtn.onclick = async () =>{
+    await fetch(domain+"/src/html/upload.html")
+    .then(data => data.text())
+    .then(DOM => {
+        body.style.opacity = 0;
+        setTimeout(async()=>{
+            body.innerHTML = DOM
+            await initUploadPage()
+        },500)
+        setTimeout(()=>{
+            body.style.opacity = 1;            
+        },800)
+        
+    }).catch(err =>{
+        console.log("Lỗi tải trang con")
+    })
+    
+}
+

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./src/css/headbar.css">
     <link rel="stylesheet" href="./src/css/home.css">
     <link rel="stylesheet" href="./src/css/playvideo.css">
+    <link rel="stylesheet" href="./src/css/upload.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="shortcut icon" href="https://cdn.pixabay.com/photo/2021/09/11/18/21/youtube-6616310_1280.png" type="image/x-icon">
     <title>KonTube</title>
@@ -15,7 +16,7 @@
         const domain = "/kontube"
         // /kontube
     </script>
-    <script src="./src/js/getdata.js"></script>
+    <script async src="./src/js/getdata.js"></script>
     
 </head>
 <body>
@@ -55,9 +56,9 @@
                     <div class="menubox">
                         <div class="itemmenubox">
                             <p>Sáng tối: </p>
-                            <p id="lightdark">
-                                |||
-                            </p>
+                            <div id="lightdark" class="switch-out">
+                                <div class="switch-in"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -68,7 +69,7 @@
         </div>
         <div id="menu"></div>
     </div>
-    <script src="./src/js/start.js"></script>
-    <script src="./src/js/menuuser.js"></script>
+    <script async src="./src/js/start.js"></script>
+    <script async src="./src/js/menuuser.js"></script>
 </body>
 </html>

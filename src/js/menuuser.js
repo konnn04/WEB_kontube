@@ -33,6 +33,7 @@ var light = {
 }
 
 if (JSON.parse(localStorage.getItem("kontube")).themedark) {
+        lightdark.classList.add("switch-on")
         root.style.setProperty("--text",dark["--text"])
         root.style.setProperty("--bg",dark["--bg"])
         root.style.setProperty("--headbargb",dark["--headbargb"])
@@ -57,6 +58,8 @@ lightdark.onclick = ()=>{
         localStorage.setItem("kontube",JSON.stringify({
             "themedark":true
         }))
+        lightdark.classList.add("switch-on")
+
     }else{
         root.style.setProperty("--text",light["--text"])
         root.style.setProperty("--bg",light["--bg"])
@@ -69,5 +72,7 @@ lightdark.onclick = ()=>{
         localStorage.setItem("kontube",JSON.stringify({
             "themedark":false
         }))
+        lightdark.classList.remove("switch-on")
+
     }
 }
