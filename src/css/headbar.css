@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    transition: all .12345s linear;
+}
+
+body{
+    background-color: black;
+}
+
+#base{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#head{
+    background-color: #1d1d1d;
+    height: 3.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+.box-headbar{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: fit-content;
+
+}
+
+.circle{
+    aspect-ratio: 1;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 1.2rem;
+
+}
+.circle:hover{
+    cursor: pointer;
+    background-color: #00000060;
+}
+
+.circle img{
+    object-fit: cover;
+    height: 100%;
+}
+/* LOGO */
+.logo{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 1.2rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.logo img{
+    height: 70%;
+}
+/* SEARCH */
+
+.search-bar{
+    height: 90%;
+    width: 40vw;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+}
+
+.search-input,
+.search-btn{
+    height: 70%;    
+}
+
+.search-input{
+    outline: none;
+    background-color: #1d1d1d;
+    border: 1px solid #525252;
+    flex: 1;
+    border-radius: 20px 0 0 20px;
+    padding: 0 20px;
+    font-size: 1.2rem;
+}
+
+.search-btn{
+    cursor: pointer;
+    display: flex;
+    width: 60px;
+    border-radius: 0 20px 20px 0;
+    background-color: #333333;
+    border: 1px solid #525252;
+    border-left: none;
+}
+
+.search-btn i{
+    margin: auto;
+}
+
+.search-btn:hover{
+    background-color: #191919;
+}
+
+.voice{
+    font-size: 1rem;
+    height: 65%;
+    background-color: #333333;
+}
+
+.user{
+    overflow: hidden;
+    height: 70%;
+}
+
+#body{
+    width: 100%;
+    height: calc(100% - 3.5rem);
+    background-color: rgb(35, 35, 35);
+    overflow-y: auto;
+    overflow-x:hidden;
+    display: flex;
+}
+
+@media screen and (max-width: 700px) {
+    html{
+        font-size: 12px;
+    }    
+    .search-bar{
+        width: fit-content;
+    }
+    .btn-menu{
+        display: none;
+    }
+    .box-headbar:nth-child(2){
+        flex: 1;
+        justify-content: flex-end;
+    }
+    .search-input{
+        display: none;       
+    }
+    .search-btn{
+        cursor: pointer;
+        display: flex;
+        width: 3rem;
+        aspect-ratio:1;
+        border-radius:50%;
+        background-color: transparent;
+        border: none;
+
+    }
+    .voice{
+        display: none;
+    }
+    .box-headbar:nth-child(3) .circle:nth-child(1){
+        display: none;
+    }
+}

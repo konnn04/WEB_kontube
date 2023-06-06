@@ -1,0 +1,178 @@
+#playvideopage{
+    width: 100%;
+    padding: 10px 40px;
+    display: flex;
+    gap: 10px;
+    flex-shrink: 1;
+}
+
+.mainboxplay{
+    width: 75%;
+    height: fit-content;
+}
+
+.playback video{
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+#title-play{
+    font-size: 1.4rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+#details-play{
+    padding: 10px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-play-chld{
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: 1rem;
+    height: fit-content;
+
+}
+
+.box-play-chld:hover{
+    background-color: #00000032;
+}
+
+.sub-btn:hover{
+    background-color: #bd0000;
+}
+
+#info-play{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.info-channel-play p:first-child{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+
+.avt-play{
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.interact-play{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#describie-play{
+    display: block;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#describie-play p:first-child{
+    font-weight: 600;
+}
+
+/* SUB */
+.subboxplay{
+    width: 25%;
+}
+/* OTHERVIDEOS */
+.othervideos{
+    width: 100%;
+    height: fit-content;
+    
+}
+.othervideo-items{
+    width: 100%;
+    aspect-ratio: 20/5;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.thumb-othervideo-border{
+    cursor: pointer;
+    height: 90%;
+    aspect-ratio: 16/9;
+    display: flex;
+}
+
+.thumb-othervideo-border img{
+    margin: auto;
+    height: 100%;
+}
+
+.info-othervideo{
+    padding: 10px 0;
+    align-self: flex-start;
+}
+
+.info-othervideo p:first-child{
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 700px) {
+    
+
+    #playvideopage{
+        display: block;
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .mainboxplay{
+        width: 100%;
+        height: fit-content;
+    }
+
+    .subboxplay{
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .box-play-chld{
+        padding: 8px;
+        gap: 5px;
+        border-radius: 2rem;
+        cursor: pointer;
+    }
+    #details-play{
+        display: block;
+    }
+
+    #info-play{
+        position: relative;
+        width: 100%;
+        justify-content: flex-start;
+        margin-bottom: 5px;
+    }
+    #info-play .sub-btn {
+        position: absolute;
+        right: 0;
+    }
+    
+    .interact-play{
+        width: 100%;
+        justify-content: flex-end;
+        gap: 5px;
+    }
+    #describie-play{
+        padding: 10px;
+    }
+    
+   
+}
