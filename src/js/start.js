@@ -3,6 +3,72 @@ const base = document.getElementById("base")
 var videoDisplay
 var videos
 var jsonVideo
+const searchInp0 = document.querySelector(".search-input")
+const searchBtn0 = document.querySelector(".search-btn")
+
+async function initResultSearch(text){
+    const searchList = body.querySelector(".search-list")
+    var searchIndex = []
+    for (let i=0;i<jsonVideo.length;i++) {
+        if ((jsonVideo[i]["title"]).toUpperCase().includes(text.toUpperCase()) ||jsonVideo[i]["owner"].toUpperCase().includes(text.toUpperCase())) {
+            searchList.innerHTML += `
+            <div class="othervideo-items">
+                <div class="thumb-othervideo-border">
+                    <img class="thumb-othervideo" src="${jsonVideo[i]["thumb"]}" alt="">
+                </div>                
+                <div class="info-othervideo">
+                <p>${jsonVideo[i]["title"]}</p> 
+                <p>${jsonVideo[i]["owner"]}</p>
+                <p>${shortNum(jsonVideo[i]["view"])} lượt xem</p>
+                </div>
+            `
+            searchIndex.push(i)
+        }
+    }
+    if (searchIndex.length<1) {
+    
+    searchList.innerHTML+=`<p>Không thấy kết quả nào!</p>`
+    }
+    const othervideoItemSearch = searchList.querySelectorAll(".othervideo-items")
+    for (let j=0;j<othervideoItemSearch.length;j++) {
+        othervideoItemSearch[j].onclick = async()=>{
+            await fetch(domain+"/src/html/playvideo.html")
+            .then(data => data.text())
+            .then(DOM => {
+                body.style.opacity = 0; 
+                setTimeout(()=>{
+                    body.innerHTML = DOM 
+                    initDatavideo(searchIndex[j])
+                    initOthervideo(searchIndex[j]) 
+                },500)
+                setTimeout(()=>{
+                    body.style.opacity = 1;            
+                },800)               
+            }).catch(err =>{
+        console.log("Lỗi tải trang con")
+    })
+        }
+    }
+
+}
+
+searchBtn0.onclick = async()=>{    
+    await fetch(domain+"/src/html/search.html")
+    .then(data => data.text())
+    .then(DOM => {
+        
+        body.style.opacity = 0; 
+            setTimeout(()=>{
+                body.innerHTML = DOM
+                initResultSearch(searchInp0.value.trim())
+            },500)
+            setTimeout(()=>{
+                body.style.opacity = 1;            
+            },800)       
+    }).catch(err =>{
+        console.log("Lỗi tải trang con")
+    })
+}
 
 const logo = document.getElementsByClassName("logo")
 
@@ -18,7 +84,7 @@ function shortNum(n){
 }
 
 function initDatavideo(i) {
-    const urlVid = body.querySelector("#vid")
+    const urlVid = body.querySelector("#video")
     urlVid.src = jsonVideo[i]["video"]
     const title = body.querySelector("#title-play")
     title.innerText = jsonVideo[i]["title"]

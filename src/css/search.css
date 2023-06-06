@@ -1,0 +1,25 @@
+.search-list{
+    margin: 0 auto;
+    width: 60%;
+    min-width: 700px;
+}
+
+.othervideo-search-items{
+    height: 200px;
+}
+
+.thumb-othervideo-border-search{
+    height: 200px;
+}
+
+.search-list p{
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+    .search-list{
+        min-width: 100%;
+    }
+}
