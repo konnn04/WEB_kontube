@@ -347,6 +347,7 @@ async function initUploadPage(){
                 "thumb":inputdataupdate[1].value.trim(),
                 "video":inputdataupdate[2].value.trim(),
                 "des":inputdataupdate[8].value.trim(),
+                "like":[parseInt(inputdataupdate[6].value),0]
             }
             await fetchData(2,jsonUp)
             noice.innerText = "Tải lên thành công, đang về trang chủ!"
