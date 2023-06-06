@@ -30,7 +30,7 @@
 }
 
 .box-play-chld{
-    background-color: #333;
+    background-color: var(--boxchld);
     padding: 10px 20px;
     display: flex;
     gap: 10px;
@@ -43,11 +43,16 @@
 }
 
 .box-play-chld:hover{
-    background-color: #00000032;
+    background-color: var(--hover);
 }
 
 .sub-btn:hover{
     background-color: #bd0000;
+}
+
+.sub-btn:hover p,
+.sub-btn:hover i{
+    color: #fff;
 }
 
 #info-play{
@@ -100,6 +105,11 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.othervideo-items:hover{
+    background-color: var(--hover);
 }
 
 .thumb-othervideo-border{
@@ -125,7 +135,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
     
 
     #playvideopage{

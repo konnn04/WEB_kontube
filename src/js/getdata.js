@@ -5,3 +5,9 @@ fetch(domain+"/src/data/datavideo.json")
                 jsonVideo=out                
             }).catch(err =>{
         console.log("Lỗi tải thông tin")})
+
+if (!(localStorage.getItem("kontube"))){
+    localStorage.setItem("kontube",JSON.stringify({
+        "themedark":false
+    }))
+}

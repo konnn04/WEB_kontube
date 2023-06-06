@@ -44,6 +44,7 @@
 
 .avt-info{
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .title-info p:first-child{
@@ -52,6 +53,23 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+@media screen and (max-width: 1500px){
+    .vid-item-box{
+        width: 300px;        
+    }
+}
+
+@media screen and (max-width: 1280px){
+    .vid-item-box{
+        width: 350px;        
+    }
+}
+
+@media screen and (max-width: 1380px){
+    .vid-item-box{
+        width: 280px;        
+    }
+}
 @media screen and (max-width: 700px){
     #home {
         display: flex;

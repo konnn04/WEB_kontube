@@ -1,14 +1,27 @@
+:root{
+    --text:#1e1e1e;
+    --bg:rgb(247, 247, 247);
+    --headbargb:#ffffff;
+    --btbhover:#00000029;
+    --hover:#00000021;
+    --boxchld:#ececec;
+    --searchbar:#f0f0f0;
+    --border:#dcdcdc;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #fff;
+    color: var(--text);
     transition: all .12345s linear;
 }
 
 body{
-    background-color: black;
+    background-color: var(--bg);
 }
+
+
 
 #base{
     width: 100vw;
@@ -17,7 +30,7 @@ body{
 }
 
 #head{
-    background-color: #1d1d1d;
+    background-color: var(--headbargb);
     height: 3.8rem;
     display: flex;
     justify-content: space-between;
@@ -31,7 +44,7 @@ body{
     justify-content: center;
     gap: 10px;
     width: fit-content;
-
+    position: relative;
 }
 
 .circle{
@@ -46,7 +59,7 @@ body{
 }
 .circle:hover{
     cursor: pointer;
-    background-color: #00000060;
+    background-color: var(--btbhover);
 }
 
 .circle img{
@@ -83,10 +96,11 @@ body{
 
 .search-input{
     outline: none;
-    background-color: #1d1d1d;
-    border: 1px solid #525252;
+    background-color: var(--searchbar);
+    border: 1px solid ;
     flex: 1;
     border-radius: 20px 0 0 20px;
+    border: 1px solid var(--border);
     padding: 0 20px;
     font-size: 1.2rem;
 }
@@ -96,8 +110,8 @@ body{
     display: flex;
     width: 60px;
     border-radius: 0 20px 20px 0;
-    background-color: #333333;
-    border: 1px solid #525252;
+    background-color: var(--boxchld);
+    border: 1px solid var(--border);
     border-left: none;
 }
 
@@ -106,13 +120,13 @@ body{
 }
 
 .search-btn:hover{
-    background-color: #191919;
+    background-color: var(--btbhover);
 }
 
 .voice{
     font-size: 1rem;
     height: 65%;
-    background-color: #333333;
+    background-color: var(--boxchld);
 }
 
 .user{
@@ -123,12 +137,41 @@ body{
 #body{
     width: 100%;
     height: calc(100% - 3.5rem);
-    background-color: rgb(35, 35, 35);
     overflow-y: auto;
     overflow-x:hidden;
     display: flex;
 }
 
+.menuuser{
+    display: none;
+    position: absolute;
+    top: 4rem;
+    right: 20px;
+    width: 350px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: var(--headbargb);
+}
+
+.active{
+    display: block;
+}
+
+.menubox{
+}
+
+.itemmenubox{
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+#lightdark{
+    font-family: 900;
+    cursor: pointer;
+}
 @media screen and (max-width: 700px) {
     html{
         font-size: 12px;
