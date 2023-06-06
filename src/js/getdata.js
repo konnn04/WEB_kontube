@@ -1,5 +1,5 @@
 var jsonVideo
-fetch("/src/data/datavideo.json")
+fetch("./src/data/datavideo.json")
             .then(data => data.json())
             .then(out => {
                 jsonVideo=out                
