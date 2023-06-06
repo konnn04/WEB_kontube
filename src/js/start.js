@@ -69,7 +69,11 @@ searchBtn0.onclick = async()=>{
         console.log("Lỗi tải trang con")
     })
 }
-
+searchInp0.addEventListener('keydown',(e)=>{
+    if (e.key=="Enter") {
+        searchBtn0.onclick()
+    }
+})
 const logo = document.getElementsByClassName("logo")
 
 function shortNum(n){

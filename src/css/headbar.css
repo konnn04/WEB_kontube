@@ -219,17 +219,18 @@ body{
         justify-content: flex-end;
     }
     .search-input{
-        display: none;       
+        border-radius: 20px;
+        width: 150px;        
     }
     .search-btn{
         cursor: pointer;
         display: flex;
-        width: 3rem;
         aspect-ratio:1;
+        width: unset;
         border-radius:50%;
-        background-color: transparent;
-        border: none;
-
+        background-color: var(--searchbar);
+        border: 1px solid var(--border);
+        margin-left: 5px;
     }
     .voice{
         display: none;
