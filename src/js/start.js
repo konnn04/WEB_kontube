@@ -54,7 +54,7 @@ function initOthervideo(i) {
     const othervideoItems = othervideos.querySelectorAll(".othervideo-items")
     for (let j=0;j<othervideoItems.length;j++){
         othervideoItems[j].onclick = async()=>{
-            await fetch("./src/html/playvideo.html")
+            await fetch(domain+"/src/html/playvideo.html")
             .then(data => data.text())
             .then(DOM => {
                 body.innerHTML = DOM 
@@ -92,7 +92,7 @@ function initVid() {
     videos = document.getElementsByClassName("vid-item-box")
     for (let i=0;i<videos.length;i++) {
     videos[i].onclick = async()=>{
-        await fetch("./src/html/playvideo.html")
+        await fetch(domain+"/src/html/playvideo.html")
             .then(data => data.text())
             .then(DOM => {
                 body.innerHTML = DOM 
@@ -106,7 +106,7 @@ function initVid() {
 }
 
 logo[0].onclick = async()=>{
-    await fetch("./src/html/home.html")
+    await fetch(domain+"/src/html/home.html")
     .then(data => data.text())
     .then(DOM => {
         body.innerHTML = DOM
@@ -120,7 +120,7 @@ logo[0].onclick = async()=>{
 
 window.addEventListener('load',async ()=>{
     //await fetch("/src/html/home.html")
-    await fetch("./src/html/home.html")
+    await fetch(domain+"/src/html/home.html")
     .then(data => data.text())
     .then(DOM => {
         body.innerHTML = DOM
