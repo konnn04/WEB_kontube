@@ -1,67 +1,116 @@
 [
     {
-        "title":"[AMV] Scarborough Fair",
-        "owner":"Konnn",
-        "sub":12000000,
-        "view":26123123,
-        "avt":"https://staticc.sportskeeda.com/editor/2023/04/54332-16826412417817-1920.jpg",
-        "thumb":"https://i3.ytimg.com/vi/FkaxczyyavE/maxresdefault.jpg",
-        "video":"https://cdn.glitch.me/5d099b81-c93f-4575-b072-fa5f752c931c/Scarborough%20Fair.mp4?v=1685985318737",
-        "des":"Like và sub cho mình nào!",
-        "like":[12000,21]
+     "title": "[AMV] Scarborough Fair",
+     "owner": "Konnn",
+     "sub": 12000000,
+     "view": 26123123,
+     "avt": "https://staticc.sportskeeda.com/editor/2023/04/54332-16826412417817-1920.jpg",
+     "thumb": "https://i3.ytimg.com/vi/FkaxczyyavE/maxresdefault.jpg",
+     "video": "https://cdn.glitch.me/5d099b81-c93f-4575-b072-fa5f752c931c/Scarborough%20Fair.mp4?v=1685985318737",
+     "des": "Like và sub cho mình nào!",
+     "like": [
+      12000,
+      21
+     ]
     },
     {
-        "title":"Honkai: Star Rail Concert - Wildfire Song",
-        "owner":"Deyash",
-        "sub":1170,
-        "view":474000,
-        "avt":"https://staticc.sportskeeda.com/editor/2023/04/54332-16826412417817-1920.jpg",
-        "thumb":"https://i3.ytimg.com/vi/EYKg5atxqhA/hqdefault.jpg",
-        "video":"https://cdn.glitch.me/5d099b81-c93f-4575-b072-fa5f752c931c/wildfire.mp4?v=1685987911426",
-        "des":"From the recent star rail concert livestream",
-        "like":[13011,21]
+     "title": "Honkai: Star Rail Concert - Wildfire Song",
+     "owner": "Deyash",
+     "sub": 1170,
+     "view": 474000,
+     "avt": "https://staticc.sportskeeda.com/editor/2023/04/54332-16826412417817-1920.jpg",
+     "thumb": "https://i3.ytimg.com/vi/EYKg5atxqhA/hqdefault.jpg",
+     "video": "https://cdn.glitch.me/5d099b81-c93f-4575-b072-fa5f752c931c/wildfire.mp4?v=1685987911426",
+     "des": "From the recent star rail concert livestream",
+     "like": [
+      13011,
+      21
+     ]
     },
     {
-        "title":"YOASOBI - Idol",
-        "owner":"Yoasobi",
-        "sub":5130000,
-        "view":146000000,
-        "avt":"https://staticc.sportskeeda.com/editor/2023/04/54332-16826412417817-1920.jpg",
-        "thumb":"https://i3.ytimg.com/vi/ZRtdQ81jPUQ/maxresdefault.jpg",
-        "video":"https://cdn.glitch.me/5d099b81-c93f-4575-b072-fa5f752c931c/Idol.mp4?v=1685988172557",
-        "des":"Truyền phát & Tải xuống: https://orcd.co/yoasobi_idol\nÂm nhạc: Ayase (https://twitter.com/ayase_0404)\nGiọng hát: ikura (https://twitter.com/ikutalilas)",
-        "like":[2500000,21]
-    },{
-        "title":"Blue Archive OST 7. Unwelcome School",
-        "owner":"Blue Archive",
-        "sub":441000,
-        "view":10000000,
-        "avt":"https://staticc.sportskeeda.com/editor/2023/04/54332-16826412417817-1920.jpg",
-        "thumb":"https://i3.ytimg.com/vi/pEg_d2f6myw/maxresdefault.jpg",
-        "video":"https://cdn.glitch.me/5d099b81-c93f-4575-b072-fa5f752c931c/unwelcomeschool.mp4?v=1686022549878",
-        "des":"",
-        "like":[237000,21]
+     "title": "YOASOBI - Idol",
+     "owner": "Yoasobi",
+     "sub": 5130000,
+     "view": 146000000,
+     "avt": "https://staticc.sportskeeda.com/editor/2023/04/54332-16826412417817-1920.jpg",
+     "thumb": "https://i3.ytimg.com/vi/ZRtdQ81jPUQ/maxresdefault.jpg",
+     "video": "https://cdn.glitch.me/5d099b81-c93f-4575-b072-fa5f752c931c/Idol.mp4?v=1685988172557",
+     "des": "Truyền phát & Tải xuống: https://orcd.co/yoasobi_idol\nÂm nhạc: Ayase (https://twitter.com/ayase_0404)\nGiọng hát: ikura (https://twitter.com/ikutalilas)",
+     "like": [
+      2500000,
+      21
+     ]
     },
     {
-        "title":"[3DMV] Zamza - Nightcord at 25:00",
-        "owner":"Project Sekai Colorful Stage! feat. Hatsune Miku",
-        "sub":1900000,
-        "view":3500000,
-        "avt":"https://img.tapimg.net/market/icons/c82153b48e841b08f8545c040b29d677_360.png",
-        "thumb":"https://i3.ytimg.com/vi/N9PnTzC20D0/maxresdefault.jpg",
-        "video":"https://cdn.glitch.me/5d099b81-c93f-4575-b072-fa5f752c931c/samsa.mp4?v=1686022796503",
-        "des":"",
-        "like":[55000,21]
+     "title": "Blue Archive OST 7. Unwelcome School",
+     "owner": "Blue Archive",
+     "sub": 441000,
+     "view": 10000000,
+     "avt": "https://staticc.sportskeeda.com/editor/2023/04/54332-16826412417817-1920.jpg",
+     "thumb": "https://i3.ytimg.com/vi/pEg_d2f6myw/maxresdefault.jpg",
+     "video": "https://cdn.glitch.me/5d099b81-c93f-4575-b072-fa5f752c931c/unwelcomeschool.mp4?v=1686022549878",
+     "des": "",
+     "like": [
+      237000,
+      21
+     ]
     },
     {
-        "title":"Kawaikute gomen",
-        "owner":"HoneyWorks OFFICIAL",
-        "sub":2540000,
-        "view":72400000,
-        "avt":"https://static.wikia.nocookie.net/lovecommittee/images/e/ee/HoneyWorks_Channel_Logo_2020.jpg",
-        "thumb":"https://i3.ytimg.com/vi/K4xLi8IF1FM/maxresdefault.jpg",
-        "video":"https://cdn.glitch.me/5d099b81-c93f-4575-b072-fa5f752c931c/kawaicutegomen.mp4?v=1686023027024",
-        "des":"",
-        "like":[847000,21]
+     "title": "[3DMV] Zamza - Nightcord at 25:00",
+     "owner": "Project Sekai Colorful Stage! feat. Hatsune Miku",
+     "sub": 1900000,
+     "view": 3500000,
+     "avt": "https://img.tapimg.net/market/icons/c82153b48e841b08f8545c040b29d677_360.png",
+     "thumb": "https://i3.ytimg.com/vi/N9PnTzC20D0/maxresdefault.jpg",
+     "video": "https://cdn.glitch.me/5d099b81-c93f-4575-b072-fa5f752c931c/samsa.mp4?v=1686022796503",
+     "des": "",
+     "like": [
+      55000,
+      21
+     ]
+    },
+    {
+     "title": "Kawaikute gomen",
+     "owner": "HoneyWorks OFFICIAL",
+     "sub": 2540000,
+     "view": 72400000,
+     "avt": "https://static.wikia.nocookie.net/lovecommittee/images/e/ee/HoneyWorks_Channel_Logo_2020.jpg",
+     "thumb": "https://i3.ytimg.com/vi/K4xLi8IF1FM/maxresdefault.jpg",
+     "video": "https://cdn.glitch.me/5d099b81-c93f-4575-b072-fa5f752c931c/kawaicutegomen.mp4?v=1686023027024",
+     "des": "",
+     "like": [
+      847000,
+      21
+     ]
+    },
+    {
+     "id": "1",
+     "title": "Tuyu - Từ biệt cậu, một ngôi sao nhạc Rock",
+     "owner": "Tuyu",
+     "view": 17856560,
+     "sub": 12300000,
+     "avt": "https://tuyu-official.jp/ogp.jpg",
+     "thumb": "https://i3.ytimg.com/vi/1cGQotpn8r4/maxresdefault.jpg",
+     "video": "https://cdn.glitch.global/5d099b81-c93f-4575-b072-fa5f752c931c/T%E1%BB%AB%20bi%E1%BB%87t%20c%E1%BA%ADu%2C%20m%E1%BB%99t%20ng%C3%B4i%20sao%20nh%E1%BA%A1c%20Rock.mp4?v=1686068655762",
+     "des": "",
+     "like": [
+      235454,
+      0
+     ]
+    },
+    {
+     "id": "2",
+     "title": "DAOKO × Kenshi Yonezu [MV] \"FireWork\"",
+     "owner": "Daoko",
+     "view": 553000000,
+     "sub": 870000,
+     "avt": "https://avatar-ex-swe.nixcdn.com/song/2021/03/08/1/3/2/2/1615175953825_640.jpg",
+     "thumb": "https://i3.ytimg.com/vi/-tKVN2mAKRI/maxresdefault.jpg",
+     "video": "https://cdn.glitch.me/5d099b81-c93f-4575-b072-fa5f752c931c/y2mate.com%20-%20DAOKO%20%20%E7%B1%B3%E6%B4%A5%E7%8E%84%E5%B8%AB%E6%89%93%E4%B8%8A%E8%8A%B1%E7%81%ABMUSIC%20VIDEO_v720P.mp4?v=1686073925852",
+     "des": "",
+     "like": [
+      2700000,
+      0
+     ]
     }
-]
+   ]

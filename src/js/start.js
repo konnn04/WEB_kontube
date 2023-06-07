@@ -3,6 +3,7 @@ const base = document.getElementById("base")
 var videoDisplay
 var videos
 var jsonVideo
+var nPlaying
 const searchInp0 = document.querySelector(".search-input")
 const searchBtn0 = document.querySelector(".search-btn")
 
@@ -25,13 +26,13 @@ async function initResultSearch(text){
             searchIndex.push(i)
         }
     }
-    if (searchIndex.length<1) {
-    
+    if (searchIndex.length<1) {    
     searchList.innerHTML+=`<p>Không thấy kết quả nào!</p>`
     }
     const othervideoItemSearch = searchList.querySelectorAll(".othervideo-items")
     for (let j=0;j<othervideoItemSearch.length;j++) {
         othervideoItemSearch[j].onclick = async()=>{
+            nPlaying=searchIndex[j]
             await fetch(domain+"/src/html/playvideo.html")
             .then(data => data.text())
             .then(DOM => {
@@ -55,8 +56,7 @@ async function initResultSearch(text){
 searchBtn0.onclick = async()=>{    
     await fetch(domain+"/src/html/search.html")
     .then(data => data.text())
-    .then(DOM => {
-        
+    .then(DOM => {        
         body.style.opacity = 0; 
             setTimeout(()=>{
                 body.innerHTML = DOM
@@ -102,6 +102,23 @@ function initDatavideo(i) {
     viewdate.innerText = shortNum(jsonVideo[i]["view"])+" lượt xem"
     const mota = body.querySelector("#des")
     mota.innerText = jsonVideo[i]["des"]
+    const videoPlaying = body.querySelector("#video")
+    videoPlaying.volume=0.1;
+
+    var Interval = setInterval(async () => {
+        if (videoPlaying.duration == videoPlaying.currentTime && (nPlaying+1 < jsonVideo.length)){
+            clearInterval(Interval)
+            nPlaying++
+            await fetch(domain+"/src/html/playvideo.html")
+            .then(data => data.text())
+            .then(DOM => {
+                body.innerHTML = DOM 
+                initDatavideo(nPlaying)
+                initOthervideo(nPlaying)               
+            }).catch(err =>{
+        console.log("Lỗi tải trang con")})
+        }
+    }, 500);
 }
 
 function initOthervideo(i) {
@@ -125,11 +142,12 @@ function initOthervideo(i) {
     const othervideoItems = othervideos.querySelectorAll(".othervideo-items")
     for (let j=0;j<othervideoItems.length;j++){
         othervideoItems[j].onclick = async()=>{
+            var k = (j>=i)?j+1:j;
+            nPlaying=k
             await fetch(domain+"/src/html/playvideo.html")
             .then(data => data.text())
             .then(DOM => {
                 body.innerHTML = DOM 
-                var k = (j>=i)?j+1:j;
                 initDatavideo(k)
                 initOthervideo(k)               
             }).catch(err =>{
@@ -163,6 +181,7 @@ function initVid() {
     videos = document.getElementsByClassName("vid-item-box")
     for (let i=0;i<videos.length;i++) {
     videos[i].onclick = async()=>{
+        nPlaying=i
         await fetch(domain+"/src/html/playvideo.html")
             .then(data => data.text())
             .then(DOM => {
