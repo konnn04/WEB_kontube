@@ -219,8 +219,11 @@ body{
         justify-content: flex-end;
     }
     .search-input{
-        border-radius: 20px;
-        width: 150px;        
+        width: 100px;      
+        padding: 5px 10px;  
+        background-color: transparent;
+        border: none;
+    
     }
     .search-btn{
         cursor: pointer;
@@ -228,9 +231,10 @@ body{
         aspect-ratio:1;
         width: unset;
         border-radius:50%;
-        background-color: var(--searchbar);
-        border: 1px solid var(--border);
+       
         margin-left: 5px;
+        background-color: transparent;
+        border: none;
     }
     .voice{
         display: none;
