@@ -8,6 +8,7 @@ const searchInp0 = document.querySelector(".search-input")
 const searchBtn0 = document.querySelector(".search-btn")
 
 async function initResultSearch(text){
+    document.title = "Kết quả tìm kiếm: "+text 
     const searchList = body.querySelector(".search-list")
     var searchIndex = []
     for (let i=0;i<jsonVideo.length;i++) {
@@ -92,6 +93,7 @@ function initDatavideo(i) {
     urlVid.src = jsonVideo[i]["video"]
     const title = body.querySelector("#title-play")
     title.innerText = jsonVideo[i]["title"]
+    document.title = jsonVideo[i]["title"]
     const avt = body.querySelector("#avt-channel")
     avt.src = jsonVideo[i]["avt"]
     const info = body.querySelector(".info-channel-play")
@@ -104,7 +106,6 @@ function initDatavideo(i) {
     mota.innerText = jsonVideo[i]["des"]
     const videoPlaying = body.querySelector("#video")
     videoPlaying.volume=0.1;
-
     var Interval = setInterval(async () => {
         if (videoPlaying.duration == videoPlaying.currentTime && (nPlaying+1 < jsonVideo.length)){
             clearInterval(Interval)
@@ -157,6 +158,7 @@ function initOthervideo(i) {
 }
 
 function initVid() {
+    document.title = "Kontube - Trang chủ"
     videoDisplay = document.getElementById("videos")
     videoDisplay.innerHTML=""
     for (let i=0;i<jsonVideo.length;i++){
@@ -257,6 +259,7 @@ window.addEventListener('load',async ()=>{
 const uploadBtn = document.querySelector(".upload")
 
 async function initUploadPage(){
+    document.title = "Tải video lên Kontube"
     const inputdataupdate = body.querySelectorAll(".inputdataupdate")
     const title = body.querySelector(".title-update")
     const thumb = body.querySelector("#thumb-update")
