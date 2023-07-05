@@ -8,6 +8,14 @@ const searchInp0 = document.querySelector(".search-input")
 const searchBtn0 = document.querySelector(".search-btn")
 
 async function initResultSearch(text){
+    const newURL0 = window.location.pathname + window.location.hash;
+    history.replaceState(null, '', newURL0);
+    const currentURL = window.location.href;
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set("search",text);
+    const newURL = `${currentURL.split('?')[0]}?${urlParams.toString()}`;
+    history.pushState(null, '', newURL);
+
     document.title = "Kết quả tìm kiếm: "+text 
     const searchList = body.querySelector(".search-list")
     var searchIndex = []
@@ -89,6 +97,14 @@ function shortNum(n){
 }
 
 function initDatavideo(i) {
+    const newURL0 = window.location.pathname + window.location.hash;
+    history.replaceState(null, '', newURL0);
+    const currentURL = window.location.href;
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set("video", i);
+    const newURL = `${currentURL.split('?')[0]}?${urlParams.toString()}`;
+    history.pushState(null, '', newURL);
+
     const urlVid = body.querySelector("#video")
     urlVid.src = jsonVideo[i]["video"]
     const title = body.querySelector("#title-play")
@@ -204,6 +220,9 @@ function initVid() {
 }
 
 logo[0].onclick = async()=>{
+    const currentURL = window.location.href
+    const newURL = currentURL.split('?')[0]
+    window.location.href = newURL
     await fetch(domain+"/src/html/home.html")
     .then(data => data.text())
     .then(DOM => {
@@ -244,7 +263,46 @@ async function fetchData(x,json){
 
 
 window.addEventListener('load',async ()=>{
+    let urlParams = new URLSearchParams(window.location.search)
+    videoOnSearch = 
     await fetchData(1)
+    if (urlParams.get('search')!=null) {
+        await fetch(domain+"/src/html/search.html")
+    .then(data => data.text())
+    .then(DOM => {        
+        body.style.opacity = 0; 
+            setTimeout(()=>{
+                body.innerHTML = DOM
+                initResultSearch(urlParams.get('search'))
+            },500)
+            setTimeout(()=>{
+                body.style.opacity = 1;            
+            },800)       
+    }).catch(err =>{
+        console.log("Lỗi tải trang con")
+    })
+    return
+    }
+    if (urlParams.get('video')!=null && parseInt(urlParams.get('video')) >= 0 && parseInt(urlParams.get('video')) < jsonVideo.length) {
+        await fetch(domain+"/src/html/playvideo.html")
+            .then(data => data.text())
+            .then(DOM => {
+                body.style.opacity = 0; 
+                setTimeout(()=>{
+                    body.innerHTML = DOM 
+                    initDatavideo(parseInt(urlParams.get('video')))
+                    initOthervideo(parseInt(urlParams.get('video'))) 
+                },500)
+                setTimeout(()=>{
+                    body.style.opacity = 1;            
+                },800)               
+            }).catch(err =>{
+        console.log("Lỗi tải trang con")
+        })
+        return
+    }else{
+        console.log("404 tài nguyên")
+    }
     await fetch(domain+"/src/html/home.html")
     .then(data => data.text())
     .then(DOM => {
